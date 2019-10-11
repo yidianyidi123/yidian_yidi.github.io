@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>2.4.1 基础知识——添加服务引用与Web引用的区别 - yidianyidi</title>
+
+
+    <meta name="description" content="2.4  使用ASP.NET测试Web服务 Web服务的使用非常灵活和自由，在前面我们使用控制台应用程序调用了一个手动生成的Web服务，步骤比较繁琐，而且出现错误很难排除。这一节，我们看看利用Visual Studio 2010如何在ASP.NET中测试Web服务。">
+<meta name="keywords" content="WebService">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.4.1 基础知识——添加服务引用与Web引用的区别">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/2.4.1 基础知识——添加服务引用与Web引用的区别/index.html">
+<meta property="og:site_name" content="yidianyidi">
+<meta property="og:description" content="2.4  使用ASP.NET测试Web服务 Web服务的使用非常灵活和自由，在前面我们使用控制台应用程序调用了一个手动生成的Web服务，步骤比较繁琐，而且出现错误很难排除。这一节，我们看看利用Visual Studio 2010如何在ASP.NET中测试Web服务。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-10T08:34:45.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2.4.1 基础知识——添加服务引用与Web引用的区别">
+<meta name="twitter:description" content="2.4  使用ASP.NET测试Web服务 Web服务的使用非常灵活和自由，在前面我们使用控制台应用程序调用了一个手动生成的Web服务，步骤比较繁琐，而且出现错误很难排除。这一节，我们看看利用Visual Studio 2010如何在ASP.NET中测试Web服务。">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon_32.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main" style="position:fixed;width:100%">
+    <div class="container" >
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/favicon.svg" alt="2.4.1 基础知识——添加服务引用与Web引用的区别" height="28">
+		<span>一点一滴</span>
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section" style="padding: 6rem 1.5rem 3rem;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-02-28T03:10:09.000Z">2017-02-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C#</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 分钟 读完 (大约 1212 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                2.4.1 基础知识——添加服务引用与Web引用的区别
+            
+        </h1>
+        <div class="content">
+            <p>2.4  使用ASP.NET测试Web服务</p>
+<p>Web服务的使用非常灵活和自由，在前面我们使用控制台应用程序调用了一个手动生成的Web服务，步骤比较繁琐，而且出现错误很难排除。这一节，我们看看利用Visual Studio 2010如何在ASP.NET中测试Web服务。</p>
+<a id="more"></a>
+<p>2.4.1  基础知识——添加服务引用与Web引用的区别</p>
+<p>由于.NET Framework 4默认不再推荐Web服务，而是通过WCF来实现Web服务的功能。而.NET Framework 3.5两者都支持，因此在添加时存在一些差异。</p>
+<p>在创建基于.NET Framework 4的项目或者网站时，右击项目或者网站名称，弹出的快捷菜单中只会出现【添加服务引用】命令，如图2-20所示。<br><img src="/images/20130416102044663.jpg" alt="20130416102044663"><br>选择该项将打开【添加服务引用】对话框，在这里的【地址】下拉列表框中可以输入WCF的地址，再单击【前往】按钮。如图2-21所示为添加一个WCF服务引用时的对话框效果。</p>
+<p>虽然，也可以通过Web服务的URL来添加服务引用。但是要注意，此方法不能保证Web服务的正常使用，因此不推荐使用。</p>
+<p>不过，打开【添加Web引用】对话框并不复杂。在图2-21所示的对话框中单击【高级】按钮，然后从弹出的【服务引用设置】对话框中单击【添加Web引用】按钮即可，如图2-22所示。</p>
+<p><img src="http://i.imgur.com/XHxveWe.jpg" alt></p>
+<p>下面我们来了解一下添加服务引用与添加Web引用的区别。</p>
+<p>(1) 添加服务引用使用的是WCF服务，而添加Web引用使用的是Web服务。</p>
+<p>(2) Visual Studio 2010在升级以后为了支持.NET Framework 3.0或3.5版本上的WCF Service Library，增加了添加服务引用功能。而对于Web服务从.NET Framework 1.0开始就支持。</p>
+<p>(3) 同时存在添加服务引用与添加Web引用两者情况的项目类型是Web服务程序，包括Web Service项目。普通的控制台和窗体等类型是没有添加Web引用的。</p>
+<p>(4) 使用添加Web引用后将由wsdl.exe生成客户端代理。而使用添加服务引用后生成客户端代理的命令是svcutil.exe。</p>
+<p>(5) 添加Web引用生成的代理可以被.NET Framework 1.0或者.NET Framework 2.0的客户端调用。而添加服务引用生成的代理只能被.NET Framework 3.0以上的客户端调用，而且添加服务引用后不仅生成代理类，在web.config中还会生成相应的标记。</p>
+<p>(6) 添加Web引用生成的Reference.cs文件里包含一个服务代理类，它负责与Web服务通信。它继承一个SOAP类，使用SOAP协议，基于XML语言。此外还包含一些Web服务类里定义的方法，和与之相关的异步调用方法和事件。遵守.NET Web Service的主要规则。</p>
+<p>(7) 添加服务引用生成的客户端文件Reference.cs也会反序列化一个本地代理类，这点和前者相似。不过除了服务类和其相关的一些别的类和契约接口外，还有服务请求和相应的信息。遵循WCF服务框架的规则。</p>
+<p>技术文档 WCF与Web服务的关系</p>
+<p>严格地说，Web服务是行业标准，它有一套规范体系标准，而且在持续不断的更新完善中，也就是Web Service 规范，也称作WS-*规范，既不是框架，也不是技术。</p>
+<p>微软的Web服务实现称为ASP.NET Web Service，它使用Soap来实现分布式环境里应用程序之间的数据交互，用WSDL来实现服务接口相关的描述。</p>
+<p>WCF(Windows Communication Foundation)是一个分布式应用的开发框架，属于特定的技术，或者平台。既不是标准，也不是规范。WCF在一定程度上就是ASP.NET Web Service，因为它支持Web Service的行业标准和核心协议。因此ASP.NET Web Service能做的事情，WCF几乎都能胜任，跨平台和语言更不是问题。</p>
+<p>但是WCF作为微软主推的一个通信平台，它的目标不仅仅是支持和集成Web Service，因为它还兼容和具备了微软早期很多分布式技术的特性。在本书的第13章将详细讨论WCF。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/WebService/">WebService</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat-pay.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/08/12/宿主机使用虚拟机的VPN连接/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">宿主机使用虚拟机的VPN连接</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/02/10/安装win7系统时如何不产生100M的系统保留分区/">
+                <span class="level-item">安装win7系统时如何不产生100M的系统保留分区</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
+                    <a href="/2017/08/12/Hexo + Github 搭建个人博客/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo + Github 搭建个人博客</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
+                    <a href="/2017/08/12/宿主机使用虚拟机的VPN连接/" class="title has-link-black-ter is-size-6 has-text-weight-normal">宿主机使用虚拟机的VPN连接</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VirtualBox/">VirtualBox</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-28T03:10:09.000Z">2017-02-28</time></div>
+                    <a href="/2017/02/28/2.4.1 基础知识——添加服务引用与Web引用的区别/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2.4.1 基础知识——添加服务引用与Web引用的区别</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C#</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-10T08:34:47.000Z">2017-02-10</time></div>
+                    <a href="/2017/02/10/安装win7系统时如何不产生100M的系统保留分区/" class="title has-link-black-ter is-size-6 has-text-weight-normal">安装win7系统时如何不产生100M的系统保留分区</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/计算机/">计算机</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-10T07:59:15.000Z">2017-02-10</time></div>
+                    <a href="/2017/02/10/C-WinForm获取当前执行程序路径的几种方法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">C#WinForm获取当前执行程序路径的几种方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C#</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/C/">
+            <span class="level-start">
+                <span class="level-item">C#</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Git/">
+            <span class="level-start">
+                <span class="level-item">Git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VirtualBox/">
+            <span class="level-start">
+                <span class="level-item">VirtualBox</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/生活日志/">
+            <span class="level-start">
+                <span class="level-item">生活日志</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/计算机/">
+            <span class="level-start">
+                <span class="level-item">计算机</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C#</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataGridView/">
+                        <span class="tag">DataGridView</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IIS-Express/">
+                        <span class="tag">IIS Express</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VirtualBox/">
+                        <span class="tag">VirtualBox</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/WebService/">
+                        <span class="tag">WebService</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-oschina-net/">
+                        <span class="tag">git.oschina.net</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github-com/">
+                        <span class="tag">github.com</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vpn/">
+                        <span class="tag">vpn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vs2015/">
+                        <span class="tag">vs2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自律/">
+                        <span class="tag">自律</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/计算机/">
+                        <span class="tag">计算机</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/责任/">
+                        <span class="tag">责任</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="padding: 3rem 1.5rem 1rem;">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/favicon.svg" alt="2.4.1 基础知识——添加服务引用与Web引用的区别" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 yidianyidi&nbsp;
+                Powered by <a href="#" target="_blank">yidianyidi.fun</a> 
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+	
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
