@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Hexo + Github 搭建个人博客 - yidianyidi</title>
+
+
+    <meta name="description" content="试试用Node.js的Hexo和Github来搭建个人博客，免去了维护服务器等问题，而且完全免费！ 文档 Hexo文档：https://hexo.io/zh-cn/docs/  Next文档：http://theme-next.iissnan.com/getting-started.html">
+<meta name="keywords" content="npm,git,hexo,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + Github 搭建个人博客">
+<meta property="og:url" content="https://yidianyidi.fun/Hexo/yidianyidi-1708121150.html">
+<meta property="og:site_name" content="yidianyidi">
+<meta property="og:description" content="试试用Node.js的Hexo和Github来搭建个人博客，免去了维护服务器等问题，而且完全免费！ 文档 Hexo文档：https://hexo.io/zh-cn/docs/  Next文档：http://theme-next.iissnan.com/getting-started.html">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yidianyidi.fun/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-11T08:21:41.854Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo + Github 搭建个人博客">
+<meta name="twitter:description" content="试试用Node.js的Hexo和Github来搭建个人博客，免去了维护服务器等问题，而且完全免费！ 文档 Hexo文档：https://hexo.io/zh-cn/docs/  Next文档：http://theme-next.iissnan.com/getting-started.html">
+<meta name="twitter:image" content="https://yidianyidi.fun/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon_32.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main" style="position:fixed;width:100%">
+    <div class="container" >
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/favicon.svg" alt="Hexo + Github 搭建个人博客" height="28">
+		<span>一点一滴</span>
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section" style="padding: 6rem 1.5rem 3rem;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 分钟 读完 (大约 2013 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Hexo + Github 搭建个人博客
+            
+        </h1>
+        <div class="content">
+            <p>试试用Node.js的Hexo和Github来搭建个人博客，免去了维护服务器等问题，而且完全免费！</p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ul>
+<li><p>Hexo文档：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+</li>
+<li><p>Next文档：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></p>
+<a id="more"></a>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2></li>
+<li><p>Git</p>
+</li>
+<li><p>Node.js</p>
+</li>
+</ul>
+<h2 id="Windows下安装部署"><a href="#Windows下安装部署" class="headerlink" title="Windows下安装部署"></a>Windows下安装部署</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>Windows下安装其实还是蛮简单的，全部默认，下一步，就好了。</p>
+<p><img src="/images/201708121120/git001.png" alt="git001"></p>
+<p><img src="/images/201708121120/git002.png" alt="git002"></p>
+<p><img src="/images/201708121120/git003.png" alt="git003"></p>
+<p><img src="/images/201708121120/git004.png" alt="git004"></p>
+<p><img src="/images/201708121120/git005.png" alt="git005"></p>
+<p><img src="/images/201708121120/git006.png" alt="git006"></p>
+<p><img src="/images/201708121120/git007.png" alt="git007"></p>
+<p><img src="/images/201708121120/git008.png" alt="git008"></p>
+<p><img src="/images/201708121120/git009.png" alt="git009"></p>
+<p><img src="/images/201708121120/git010.png" alt="git010"></p>
+<p><img src="/images/201708121120/git011.png" alt="git011"></p>
+<p><img src="/images/201708121120/git012.png" alt="git012"></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>一样，默认选择加下一步。</p>
+<p><img src="/images/201708121120/node001.png" alt="node001"></p>
+<p><img src="/images/201708121120/node002.png" alt="node002"></p>
+<p><img src="/images/201708121120/node003.png" alt="node003"></p>
+<p><img src="/images/201708121120/node004.png" alt="node004"></p>
+<p><img src="/images/201708121120/node005.png" alt="node005"></p>
+<p><img src="/images/201708121120/node006.png" alt="node006"></p>
+<p><img src="/images/201708121120/node007.png" alt="node007"></p>
+<h3 id="安装结果检查"><a href="#安装结果检查" class="headerlink" title="安装结果检查"></a>安装结果检查</h3><p>Windows下启动命令行或PowerShell。分别输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; node -v</span><br><span class="line">&gt; npm -v</span><br><span class="line">&gt; git --version</span><br></pre></td></tr></table></figure>
+
+<p>如果结果显示如下图，则说明各环境安装正确，可以进行后续操作。<br><img src="/images/201708121120/cmd001.png" alt="cmd001"></p>
+<h2 id="Github设置"><a href="#Github设置" class="headerlink" title="Github设置"></a>Github设置</h2><p>先在 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 注册一个账户，注册好后，登录，创建代码库。<br>登录后，选择界面右上角“+”号下拉，或者点击界面右侧的“New repository”，<br><img src="/images/201708121120/github001.png" alt="github001"></p>
+<p>进入代码库创建界面，在Repository name栏写yourname.github.io（yourname为你github账户名称）<br><img src="/images/201708121120/github002.png" alt="github002"></p>
+<p>代码库创建成功之后，自动跳到项目的代码库管理界面：<br><img src="/images/201708121120/github003.png" alt="github003"></p>
+<p>选择界面右侧的Settings选项卡，进入后，下拉，可以看到GitHub Pages一栏：<br><img src="/images/201708121120/github004.png" alt="github004"><br>这里就是创建Pages的地方，保存即可；保存后在这里可以自定义自己的域名，将yoursite.github.io转向自己的域名。</p>
+<h3 id="配置Git以上传远程服务器"><a href="#配置Git以上传远程服务器" class="headerlink" title="配置Git以上传远程服务器"></a>配置Git以上传远程服务器</h3><p>首先配置自己账户的身份信息，Git bash中输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;yourname&quot;</span><br><span class="line">$ git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Github上传采用SSH密钥的方式，生成密钥：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+
+<p>提示选择全默认，按三次回车即可，之后会在当前用户目录下生成一个文件夹.ssh里面有两个文件id_rsa和id_rsa.pub。接着进入Github，登录，进入用户设置setting,选择左侧的SSH and GPG keys,点击New SSH key；用文本工具打开id_rsa.pub，将内容拷贝到Github中的Key中，Title任意写，保存即可。</p>
+<p>测试是否连接通github.com:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>返回</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi yourname! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<p>说明连接成功！</p>
+<h2 id="安装配置Hexo"><a href="#安装配置Hexo" class="headerlink" title="安装配置Hexo"></a>安装配置Hexo</h2><p>在当前用户家目录下有个文件.npmrc这里存放nodejs的一些配置，我们将源镜像改为淘宝镜像，加快访问速度；将插件安装路径改为自己想要的路径，否则，默认hexo会安装在用户目录下的\AppData\Roaming下。</p>
+<p>打开.npmrc文件，输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">registry=https://registry.npm.taobao.org/</span><br><span class="line">prefix=D:\Program Files\nodejs</span><br></pre></td></tr></table></figure>
+
+<p>启动Git Bash命令行。我把Hexo安装在D:\nodejs目录里。<br>在命令行中输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>可能会有WARN，不用理会，继续输入检查是否安装成功：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>如果得到：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo-cli: 1.0.2</span><br><span class="line">os: Windows_NT 10.0.14393 win32 x64</span><br><span class="line">http_parser: 2.7.0</span><br><span class="line">node: 6.9.4</span><br><span class="line">v8: 5.1.281.89</span><br><span class="line">uv: 1.9.1</span><br><span class="line">zlib: 1.2.8</span><br><span class="line">ares: 1.10.1-DEV</span><br><span class="line">icu: 57.1</span><br><span class="line">modules: 48</span><br><span class="line">openssl: 1.0.2j</span><br></pre></td></tr></table></figure>
+
+<p>则说明安装成功。</p>
+<h2 id="部署博客项目"><a href="#部署博客项目" class="headerlink" title="部署博客项目"></a>部署博客项目</h2><p>在本地目录新建一个文件夹（博客项目），右键选择Git Bash Here,启动Git Bash命令行。<br><img src="/images/201708121120/hexo001.png" alt="hexo001"></p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在Git Bash命令行输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+
+<p>等初始化完成，再输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>npm自动安装依赖的组件。<br>部署前需要安装一个扩展：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h3><p>命令行中，继续输入,以生成静态博客站：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g     #或 hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>启动web服务，输入：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s     #或 hexo server</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，就可以看到运行效果。</p>
+<h3 id="Hexo的常用命令"><a href="#Hexo的常用命令" class="headerlink" title="Hexo的常用命令"></a>Hexo的常用命令</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean			#清空缓存db.json和public文件夹</span><br><span class="line">$ hexo generate			#简写：hexo g   生成静态文件，会在当前目录下生成一个新的 public 文件夹</span><br><span class="line">$ hexo server			#简写：hexo s   启动本地web服务，可以预览站点</span><br><span class="line">$ hexo deploy			#简写：hexo d   部署到远程服务器（比如github等平台）</span><br><span class="line">$ hexo new &quot;artical name&quot;	#简写：hexo n   新建文章</span><br><span class="line">$ hexo new page &quot;page name&quot;	#新建页面</span><br><span class="line">Hexo的常用组合命令</span><br><span class="line"></span><br><span class="line">$ hexo d -g				#生成并部署到远程服务器</span><br><span class="line">$ hexo s -g				#生成并启动web服务</span><br></pre></td></tr></table></figure>
+
+<h3 id="Hexo主题修改"><a href="#Hexo主题修改" class="headerlink" title="Hexo主题修改"></a>Hexo主题修改</h3><p>Hexo 默认的主题基本都不会喜欢，流行的一款主题是Next可以在 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> 获取。</p>
+<p>将下载的主题改名为next,拷贝到博客目录的themes文件夹下，修改博客站点目录下的_config.yml配置文件，找到theme,修改为：</p>
+<p>theme: next<br>注意：Yaml配置文件的键值对冒号后面有空格，否则配置异常；可以去 <a href="http://www.yamllint.com/" target="_blank" rel="noopener">http://www.yamllint.com/</a> 校验配置文件的有效性。<br>重新执行启动预览：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo s -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="全局配置文件"><a href="#全局配置文件" class="headerlink" title="全局配置文件"></a>全局配置文件</h3><p>站点下的_config.yml为全局配置文件，在主题目录下也有一个同名配置文件。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line">## 键值对，键: 值   注意键后面冒号要空一格再写值，否则异常</span><br><span class="line"># Site</span><br><span class="line">title: 博客名				#标题博客名</span><br><span class="line">subtitle: 副标题				#副标题</span><br><span class="line">description: 关键字、描述		#给搜索引擎用，对站点的描述</span><br><span class="line">author: 作者				#网站底部的作者名称</span><br><span class="line">language: zh-CN				#语言</span><br><span class="line">email: yourname@xxx.com			#联系邮箱</span><br><span class="line">timezone: Asia/Shanghai			#时区,Hexo 默认使用您电脑的时区;</span><br><span class="line">					#时区列表:https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</span><br><span class="line"># URL 网址</span><br><span class="line">## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span><br><span class="line">url: http://yoursite.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/    #生成文件名字的格式</span><br><span class="line">permalink_defaults:</span><br><span class="line"># Directory 目录配置</span><br><span class="line">source_dir: source                      #源文件夹，这个文件夹用来存放内容。</span><br><span class="line">public_dir: public                      #公共文件夹，这个文件夹用于存放生成的站点文件。</span><br><span class="line">tag_dir: tags                           #标签文件夹</span><br><span class="line">archive_dir: archives                   #归档文件夹</span><br><span class="line">category_dir: categories                #分类文件夹</span><br><span class="line">code_dir: downloads/code                #include code 文件夹</span><br><span class="line">i18n_dir: :lang                         #国际化（i18n）文件夹</span><br><span class="line">skip_render:                            #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。</span><br><span class="line"># Writing 文章</span><br><span class="line">new_post_name: :title.md                #新文章文件名</span><br><span class="line">default_layout: post                    #默认布局</span><br><span class="line">titlecase: false                        #标题转化成大写</span><br><span class="line">external_link: true                     #在新标签里打开链接</span><br><span class="line">filename_case: 0                        #转换文件名，1代表小写；2代表大写；默认为0，意思就是创建文章的时候，是否自动帮你转换文件名，默认就行，意义不大。</span><br><span class="line">render_drafts: false                    #是否渲染_drafts目录下的文章，默认为false</span><br><span class="line">post_asset_folder: false                #启动Asset文件夹</span><br><span class="line">relative_link: false                    #把链接改为与根目录的相对位址，默认false</span><br><span class="line">future: true                            #显示未来的文章，默认false</span><br><span class="line">highlight:                              #代码块设置</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true                     #显示行号</span><br><span class="line">  auto_detect: true</span><br><span class="line">  tab_replace:</span><br><span class="line"># Category &amp; Tag                        #分类和标签</span><br><span class="line">default_category: uncategorized         #默认分类</span><br><span class="line">category_map:                           #分类别名</span><br><span class="line">tag_map:                                #标签别名</span><br><span class="line"># Date / Time format                    #日期时间格式</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line"># Pagination                             #分页</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10                             #每页文章数，设置成0禁用分页</span><br><span class="line">pagination_dir: page                     #分页目录</span><br><span class="line"># Extensions                             #插件和主题</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br><span class="line"># Deployment                             #部署</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: </span><br><span class="line">    git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/git/">git</a>, <a class="has-link-grey -link" href="/tags/github/">github</a>, <a class="has-link-grey -link" href="/tags/hexo/">hexo</a>, <a class="has-link-grey -link" href="/tags/npm/">npm</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat-pay.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/Hexo/yidianyidi-19101113.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Hexo设置自定义指定首页</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/VirtualBox/yidianyidi-1708121150.html">
+                <span class="level-item">宿主机使用虚拟机的VPN连接</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T09:16:28.000Z">2019-10-11</time></div>
+                    <a href="/Hexo/yidianyidi-1910111716.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo配置 优化SEO</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T05:15:45.000Z">2019-10-11</time></div>
+                    <a href="/Hexo/yidianyidi-19101113.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo设置自定义指定首页</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
+                    <a href="/Hexo/yidianyidi-1708121150.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo + Github 搭建个人博客</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
+                    <a href="/VirtualBox/yidianyidi-1708121150.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">宿主机使用虚拟机的VPN连接</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/VirtualBox/">VirtualBox</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-28T03:10:09.000Z">2017-02-28</time></div>
+                    <a href="/C-sharp/yidianyidi-1702281110.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2.4.1 基础知识——添加服务引用与Web引用的区别</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C-sharp/">C#</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/C-sharp/">
+            <span class="level-start">
+                <span class="level-item">C#</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Git/">
+            <span class="level-start">
+                <span class="level-item">Git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Hexo/">
+            <span class="level-start">
+                <span class="level-item">Hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VirtualBox/">
+            <span class="level-start">
+                <span class="level-item">VirtualBox</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Life/">
+            <span class="level-start">
+                <span class="level-item">生活日志</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Computer/">
+            <span class="level-start">
+                <span class="level-item">计算机</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C#</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/DataGridView/">
+                        <span class="tag">DataGridView</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/IIS-Express/">
+                        <span class="tag">IIS Express</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VirtualBox/">
+                        <span class="tag">VirtualBox</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/WebService/">
+                        <span class="tag">WebService</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git/">
+                        <span class="tag">git</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-oschina-net/">
+                        <span class="tag">git.oschina.net</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github-com/">
+                        <span class="tag">github.com</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/npm/">
+                        <span class="tag">npm</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/theme/">
+                        <span class="tag">theme</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vpn/">
+                        <span class="tag">vpn</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vs2015/">
+                        <span class="tag">vs2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/自律/">
+                        <span class="tag">自律</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/计算机/">
+                        <span class="tag">计算机</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/责任/">
+                        <span class="tag">责任</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style="padding: 3rem 1.5rem 1rem;">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/favicon.svg" alt="Hexo + Github 搭建个人博客" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 yidianyidi&nbsp;
+                Powered by <a href="#" target="_blank">yidianyidi.fun</a> 
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+	
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
