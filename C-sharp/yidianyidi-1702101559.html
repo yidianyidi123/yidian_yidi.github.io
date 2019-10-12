@@ -10,19 +10,19 @@
 <title>C#WinForm获取当前执行程序路径的几种方法 - yidianyidi</title>
 
 
-    <meta name="description" content="1.获取和设置当前目录的完全限定路径。 1string str = System.Environment.CurrentDirectory;  Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
-<meta name="keywords" content="C#">
+    <meta name="description" content="1.获取和设置当前目录的完全限定路径。string str = System.Environment.CurrentDirectory;Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
+<meta name="keywords" content="winfrom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#WinForm获取当前执行程序路径的几种方法">
 <meta property="og:url" content="https://yidianyidi.fun/C-sharp/yidianyidi-1702101559.html">
 <meta property="og:site_name" content="yidianyidi">
-<meta property="og:description" content="1.获取和设置当前目录的完全限定路径。 1string str = System.Environment.CurrentDirectory;  Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
+<meta property="og:description" content="1.获取和设置当前目录的完全限定路径。string str = System.Environment.CurrentDirectory;Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yidianyidi.fun/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-12T03:10:24.477Z">
+<meta property="og:updated_time" content="2019-10-12T06:20:47.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#WinForm获取当前执行程序路径的几种方法">
-<meta name="twitter:description" content="1.获取和设置当前目录的完全限定路径。 1string str = System.Environment.CurrentDirectory;  Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
+<meta name="twitter:description" content="1.获取和设置当前目录的完全限定路径。string str = System.Environment.CurrentDirectory;Result: C:xxxxxx 2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。string str = System.Windows.Forms.Application.StartupPath;Result: C:xxxxxx">
 <meta name="twitter:image" content="https://yidianyidi.fun/images/og_image.png">
 
 
@@ -159,10 +159,7 @@
             
         </h1>
         <div class="content">
-            <p>1.获取和设置当前目录的完全限定路径。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string str = System.Environment.CurrentDirectory;</span><br></pre></td></tr></table></figure>
-
-<p>Result: C:xxxxxx</p>
+            <p>1.获取和设置当前目录的完全限定路径。<br><code>string str = System.Environment.CurrentDirectory;</code><br>Result: C:xxxxxx</p>
 <p>2.获取启动了应用程序的可执行文件的路径，不包括可执行文件的名称。<br>string str = System.Windows.Forms.Application.StartupPath;<br>Result: C:xxxxxx</p>
 <a id="more"></a>
 <p>3.获取新的 Process 组件并将其与当前活动的进程关联的主模块的完整路径，包含文件名。<br>string str=System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;<br>Result: C:xxxxxxxxx.exe</p>
@@ -175,13 +172,7 @@
 <hr>
 <p>在dll中有时需要使用主调用程序中的资源，这就要正确获取调用程序的文件名及其路径等信息。这需要和调用dll本身的文件名和路径区分开来！<br>这就牵扯到System.Reflection.Assembly程序集类使用了。</p>
 <blockquote>
-<p>GetExecutingAssembly ： 获取包含当前执行的代码的程序集</p>
-</blockquote>
-<blockquote>
-<p>GetCallingAssembly ： 返回调用当前正在执行的方法的方法的 System.Reflection.Assembly </p>
-</blockquote>
-<blockquote>
-<p>GetDirectoryName：返回指定路径字符串的目录信息</p>
+<p>GetExecutingAssembly ： 获取包含当前执行的代码的程序集<br>GetCallingAssembly ： 返回调用当前正在执行的方法的方法的 System.Reflection.Assembly<br>GetDirectoryName：返回指定路径字符串的目录信息</p>
 </blockquote>
 
         </div>
@@ -190,7 +181,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C#</a>
+                    <a class="has-link-grey -link" href="/tags/winfrom/">winfrom</a>
                 </div>
             </div>
         </div>
@@ -274,6 +265,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-12T05:08:24.000Z">2019-10-12</time></div>
+                    <a href="/C-sharp/yidianyidi-1910121308.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">rdlc报表打印提示找不到相关文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C-sharp/">C#</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T09:16:28.000Z">2019-10-11</time></div>
                     <a href="/Hexo/yidianyidi-1910111716.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo配置 优化SEO</a>
                     <p class="is-size-7 is-uppercase">
@@ -300,10 +304,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
-                    <a href="/Hexo/yidianyidi-1708121150.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo + Github 搭建个人博客</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-24T07:16:22.000Z">2018-08-24</time></div>
+                    <a href="/DataBase/yidianyidi-180824.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">SqlServer使用ip无法登陆</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                        <a class="has-link-grey -link" href="/categories/DataBase/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -313,21 +317,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
-                    <a href="/VirtualBox/yidianyidi-1708121150.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">宿主机使用虚拟机的VPN连接</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/VirtualBox/">VirtualBox</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-28T03:10:09.000Z">2017-02-28</time></div>
-                    <a href="/C-sharp/yidianyidi-1702281110.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2.4.1 基础知识——添加服务引用与Web引用的区别</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-22T07:39:29.000Z">2017-11-22</time></div>
+                    <a href="/C-sharp/yidianyidi-171122.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">vs2017删除代码中空行</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C-sharp/">C#</a>
                     </p>
@@ -352,7 +343,7 @@
                 <span class="level-item">C#</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Git/">
@@ -377,6 +368,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DataBase/">
+            <span class="level-start">
+                <span class="level-item">数据库</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Life/">
@@ -414,7 +413,29 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -468,7 +489,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C#</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -501,9 +522,23 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/SqlServer/">
+                        <span class="tag">SqlServer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/VirtualBox/">
                         <span class="tag">VirtualBox</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Visual-Studio/">
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -557,6 +592,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/rdlc/">
+                        <span class="tag">rdlc</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/theme/">
                         <span class="tag">theme</span>
                         <span class="tag is-grey">1</span>
@@ -573,6 +615,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/vs2015/">
                         <span class="tag">vs2015</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/winfrom/">
+                        <span class="tag">winfrom</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
