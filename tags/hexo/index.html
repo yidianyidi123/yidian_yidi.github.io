@@ -71,7 +71,7 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-2-column">
-    <nav class="navbar navbar-main" style="position:fixed;width:100%">
+    <nav class="navbar navbar-main" style="position:fixed;width:100%;">
     <div class="container" >
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
@@ -115,9 +115,10 @@
     </div>
 </nav>
     
-    <section class="section" style="padding: 6rem 1.5rem 3rem;">
-        <div class="container">
-            <div class="columns">
+    
+    <section class="section" style="padding: 9rem 1.5rem 3rem;">
+        <div class="container" >
+            <div class="columns" >
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -416,6 +417,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo-SEO/">
+                        <span class="tag">Hexo SEO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/IIS-Express/">
                         <span class="tag">IIS Express</span>
                         <span class="tag is-grey">1</span>
@@ -609,6 +617,82 @@ var IcarusThemeSettings = {
 
     
     <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>er></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
