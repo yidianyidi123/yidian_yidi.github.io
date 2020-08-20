@@ -7,22 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>SqlServer使用ip无法登陆 - yidianyidi</title>
+<title>搬瓦工VPS方案分享 - yidianyidi</title>
 
 
-    <meta name="description" content="装完vpn后出现sqlserver用ip模式登陆不了。提示：已成功与服务器建立连接，但是在登录过程中发生错误。 (provider: SSL Provider, error: 0 - 远程主机强迫关闭了一个现有的连接。) (Microsoft SQL Server，错误: 10054) 以为被软件修改了默认端口，通过sql语句查询端口还是1433没有变化。打开sqlserver配置管理器时，提示无">
-<meta name="keywords" content="SqlServer">
+    <meta name="description" content="搬瓦工VPS，从2013年发展至今，从开始提供年付低至3.99美元便宜VPS主机开始，掀起VPS主机低价狂潮。那时候，我们可以看到根据内存和流量的区别分为64MB、96MB、128MB、512MB以及1024MB内存方案。但是，从2018年开始，商家开始逐渐转型，陆续关闭和下架低配置和低价格方案，开始以优化线路和速度，以及稳定服务器服务为主要特点。 从2019年开始，商家更加是取消低于年付20美元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SqlServer使用ip无法登陆">
-<meta property="og:url" content="https://yidianyidi.fun/数据库/yidianyidi-180824.html">
+<meta property="og:title" content="搬瓦工VPS方案分享">
+<meta property="og:url" content="https://yidianyidi.fun/uncategorized/yidianyidi-.html">
 <meta property="og:site_name" content="yidianyidi">
-<meta property="og:description" content="装完vpn后出现sqlserver用ip模式登陆不了。提示：已成功与服务器建立连接，但是在登录过程中发生错误。 (provider: SSL Provider, error: 0 - 远程主机强迫关闭了一个现有的连接。) (Microsoft SQL Server，错误: 10054) 以为被软件修改了默认端口，通过sql语句查询端口还是1433没有变化。打开sqlserver配置管理器时，提示无">
+<meta property="og:description" content="搬瓦工VPS，从2013年发展至今，从开始提供年付低至3.99美元便宜VPS主机开始，掀起VPS主机低价狂潮。那时候，我们可以看到根据内存和流量的区别分为64MB、96MB、128MB、512MB以及1024MB内存方案。但是，从2018年开始，商家开始逐渐转型，陆续关闭和下架低配置和低价格方案，开始以优化线路和速度，以及稳定服务器服务为主要特点。 从2019年开始，商家更加是取消低于年付20美元">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yidianyidi.fun/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-12T06:03:30.857Z">
+<meta property="og:updated_time" content="2019-10-14T06:58:14.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SqlServer使用ip无法登陆">
-<meta name="twitter:description" content="装完vpn后出现sqlserver用ip模式登陆不了。提示：已成功与服务器建立连接，但是在登录过程中发生错误。 (provider: SSL Provider, error: 0 - 远程主机强迫关闭了一个现有的连接。) (Microsoft SQL Server，错误: 10054) 以为被软件修改了默认端口，通过sql语句查询端口还是1433没有变化。打开sqlserver配置管理器时，提示无">
+<meta name="twitter:title" content="搬瓦工VPS方案分享">
+<meta name="twitter:description" content="搬瓦工VPS，从2013年发展至今，从开始提供年付低至3.99美元便宜VPS主机开始，掀起VPS主机低价狂潮。那时候，我们可以看到根据内存和流量的区别分为64MB、96MB、128MB、512MB以及1024MB内存方案。但是，从2018年开始，商家开始逐渐转型，陆续关闭和下架低配置和低价格方案，开始以优化线路和速度，以及稳定服务器服务为主要特点。 从2019年开始，商家更加是取消低于年付20美元">
 <meta name="twitter:image" content="https://yidianyidi.fun/images/og_image.png">
 
 
@@ -76,12 +75,12 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-2-column">
-    <nav class="navbar navbar-main" style="position:fixed;width:100%;">
+    <nav id="navbarsticky" class="navbar navbar-main" style="position:fixed;width:100%;">
     <div class="container" >
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="SqlServer使用ip无法登陆" height="28">
+                <img src="/images/favicon.svg" alt="搬瓦工VPS方案分享" height="28">
 		<span>一点一滴</span>
             
             </a>
@@ -91,19 +90,19 @@
             <div class="navbar-start">
                 
                 <a class="navbar-item"
-                href="/">Home</a>
+                href="/">首页</a>
                 
                 <a class="navbar-item"
-                href="/archives">Archives</a>
+                href="/archives">归档</a>
                 
                 <a class="navbar-item"
-                href="/categories">Categories</a>
+                href="/categories">分类</a>
                 
                 <a class="navbar-item"
-                href="/tags">Tags</a>
+                href="/tags">标签</a>
                 
                 <a class="navbar-item"
-                href="/about">About</a>
+                href="/about">关于</a>
                 
             </div>
             
@@ -120,7 +119,7 @@
     </div>
 </nav>
     
-    
+       
     <section class="section" style="padding: 9rem 1.5rem 3rem;">
         <div class="container" >
             <div class="columns" >
@@ -131,17 +130,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-12T05:57:22.000Z">2019-10-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-10-14T02:01:22.000Z">2019-10-14</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 625 个字)
+                    16 分钟 读完 (大约 2333 个字)
                 </span>
                 
                 
@@ -155,28 +150,84 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                SqlServer使用ip无法登陆
+                搬瓦工VPS方案分享
             
         </h1>
         <div class="content">
-            <p>装完vpn后出现sqlserver用ip模式登陆不了。提示：<br><font color="red"><br>已成功与服务器建立连接，但是在登录过程中发生错误。 (provider: SSL Provider, error: 0 - 远程主机强迫关闭了一个现有的连接。) (Microsoft SQL Server，错误: 10054)</font></p>
-<p>以为被软件修改了默认端口，通过sql语句查询端口还是1433没有变化。打开sqlserver配置管理器时，提示无法及时建立与目标计算机的连接，然后各种百度搜索…</p>
-<p>解决方法：</p>
-<p>1.直接卸载vpn后，sqlserver恢复正常。</p>
-<p>2.可能是因为安装某网络软件之后影响了电脑的LPS，<font color="red">在命令行里执行netsh winsock reset重置命令然后重启电脑，问题解决。</font></p>
-<p>听说360安全卫士之类的软件带了LPS修复功能，应该也能解决。但是我360修复的时候卡死了，估计没修复完成。</p>
-<p>##LSP是什么<br>LSP是什么？LSP的中文名叫分层服务提供程序，是TCP/IP等协议的接口。浏览器，聊天工具等等都要通过这个接口来获取相应的信息，LSP的功能就相当于生活中的插座。当LSP出现异常时，这个调用的接口就没办法正常工作，就会出现只能上qq不能打开网页，巨盾拦拦不能使用或者一些网游加速器无法正常使用的情况。</p>
-<p>netsh winsock reset命令，作用是重置 Winsock 目录。如果一台机器上的Winsock协议配置有问题的话将会导致网络连接等问题，就需要用netsh winsock reset命令来重置Winsock目录借以恢复网络。这个命令可以重新初始化网络环境，以解决由于软件冲突、病毒原因造成的参数错误问题。 netsh是一个能够通过命令行操作几乎所有网络相关设置的接口，比如设置IP，DNS，网卡，无线网络等，Winsock是系统内部目录，Winsock是Windows网络编程接口，winsock工作在应用层，它提供与底层传输协议无关的高层数据传输编程接口，reset是对Winsock的重置操作。当执行完winsock的命令重启计算机后，需要重新配置IP。</p>
-
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/SqlServer/">SqlServer</a>
+            <p>搬瓦工VPS，从2013年发展至今，从开始提供年付低至3.99美元便宜VPS主机开始，掀起VPS主机低价狂潮。那时候，我们可以看到根据内存和流量的区别分为64MB、96MB、128MB、512MB以及1024MB内存方案。但是，从2018年开始，商家开始逐渐转型，陆续关闭和下架低配置和低价格方案，开始以优化线路和速度，以及稳定服务器服务为主要特点。</p>
+<p>从2019年开始，商家更加是取消低于年付20美元的方案。如果说以后我们需要在搬瓦工VPS主机商选择低价格VPS主机，应该成为往事。从2019年开始，商家应该会从稳定和线路和性价比服务商提高优势，我们一起期待吧。<br> <a id="more"></a><br>#搬瓦工VPS方案分享<br>搬瓦工VPS，全部采用KVM架构的Linux系统环境，支持CentOS、Debian、Ubuntu等多个常见系统版本。且不限制重装系统次数（有些商家每天/每月都有限制安装次数的），这样对于新手学习VPS，有需要多次安装是一个不错的选择。商家之前是有提供OPENVZ架构的，但是从2019年开始，都直接下架且已有用户选择的到期将无法续费。</p>
+<blockquote>
+<p>Tip：所有系统中只能Linux系统，不可以选择Windows系统，我们可以自己安装VNC桌面。</p>
+</blockquote>
+<p>我们可以根据实际的需要选择适合自己的配置，包括内存、硬盘、线路等方案。在这篇文章中，我们 搬瓦工VPS分享网将会定期整理最新的搬瓦工VPS主机配置，包括有补货库存的，包括有最新特价活动的，我们都将会更新出来。如果有需要的网友可以收藏我们网站或者收藏本页面。</p>
+<p>1、CN2 GIA优化线路方案</p>
+<p>CN2 GIA线路方案一共有10个数据中心可以选择，采用三网直连线路。可以切换到半程CN2 GT以及普通其他机房，但是不可以切换到香港机房。速度上是中美线路比较优秀的。建站用户或者需要较快速度美国机房的可以选择。</p>
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h6 class="panel-title">月32.99方案（CN2 GIA）</h6>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>CPU: 4x Intel Xeon</li>
+                    <li>内存：4GB</li>
+                    <li>硬盘：80GB SSD</li>
+                    <li>流量：3000GB/月</li>
+                    <li>带宽：1千兆</li>
+                    <li>价格：月$32.99</li>
+                </ul>
+                <div class="block-div">
+                    <a class="btn btn-danger btn-lg" role="button" href="https://bwh88.net/aff.php?aff=51752&amp;pid=74" target="_blank" rel="noopener noreferrer">
+                        <i class="am-icon-shopping-cart"></i>
+                        直达方案通道（CN2 GIA）
+                    </a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h6 class="panel-title">月62.99方案（CN2 GIA）</h6>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>CPU: 6x Intel Xeon</li>
+                    <li>内存：8GB</li>
+                    <li>硬盘：160GB SSD</li>
+                    <li>流量：5000GB/月</li>
+                    <li>带宽：1千兆</li>
+                    <li>价格：月$62.99</li>
+                </ul>
+                <div class="block-div">
+                    <a class="btn btn-danger btn-lg" role="button" href="https://bwh88.net/aff.php?aff=51752&amp;pid=75" target="_blank" rel="noopener noreferrer">
+                        <i class="am-icon-shopping-cart"></i>
+                        直达方案通道（CN2 GIA）
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+2、CN2 GT半程优化线路
+
+<p>CN2 GT方案，拥有DC3 CN2和DC8 CN2两个可选半程CN2方案。我们在购买的时候可能看到的就是DC3 CN2，但是我们可以切换机房到DC8 CN2。当然也可以切换到普通KVM架构的其他海外机房，不可以切换到CN2 GIA。白天速度还可以，晚上延迟是比CN2 GIA高的。</p>
+<p>年49.99方案（CN2 GT）<br>CPU: 1x Intel Xeon<br>内存：1GB<br>硬盘：20GB SSD<br>流量：1000GB/月<br>带宽：1千兆<br>价格：年$49.99<br>半年52.99方案（CN2 GT）<br>CPU: 1x Intel Xeon<br>内存：2GB<br>硬盘：40GB SSD<br>流量：2000GB/月<br>带宽：1千兆<br>价格：半年$52.99<br>季度59.99方案（CN2 GT）<br>CPU: 2x Intel Xeon<br>内存：4GB<br>硬盘：80GB SSD<br>流量：3000GB/月<br>带宽：1千兆<br>价格：季度$59.99<br>月39.99方案（CN2 GT）<br>CPU: 2x Intel Xeon<br>内存：8GB<br>硬盘：160GB SSD<br>流量：5000GB/月<br>带宽：1千兆<br>价格：月$39.99<br>3、香港PCCW机房方案</p>
+<p>搬瓦工VPS主机商也有提供香港机房，采用香港PCCW线路。与众多香港VPS主机商家不同之处在于提供高达1Gbps带宽，一般我们看到都是1-5M的，很少有遇到1Gbps的，可能也有少见一些商家提供100M或者30Mbps的。搬瓦工香港机房配置不可以切换机房，只有一个机房。</p>
+<p>月89.99方案（香港）<br>CPU: 2x Intel Xeon<br>内存：2GB<br>硬盘：40GB SSD<br>流量：500GB/月<br>带宽：1千兆<br>价格：月$89.99<br>月155.99方案（香港）<br>CPU: 4x Intel Xeon<br>内存：4GB<br>硬盘：80GB SSD<br>流量：1000GB/月<br>带宽：1千兆<br>价格：月$155.99<br>月299.99方案（香港）<br>CPU: 6x Intel Xeon<br>内存：8GB<br>硬盘：160GB SSD<br>流量：2000GB/月<br>带宽：1千兆<br>价格：月$299.99<br>月599.99方案（香港）<br>CPU: 8x Intel Xeon<br>内存：16GB<br>硬盘：320GB SSD<br>流量：4000GB/月<br>带宽：1千兆<br>价格：月$599.99<br>4、普通机房方案</p>
+<p>搬瓦工VPS普通机房方案，可以切换到CN2 GT机房，但是切换之后流量会减少至三分之一，不可以切换到CN2 GIA或者香港机房。对于预算不足的用户且需要CN2 GT线路的，可以用用，流量使用不多的用户可以选择。</p>
+<p>年49.99方案（普通）<br>CPU: 2x Intel Xeon<br>内存：1GB<br>硬盘：20GB SSD<br>流量：1000GB/月<br>带宽：1千兆<br>价格：年$49.99<br>半年$52.99方案（普通机房）<br>CPU: 3x Intel Xeon<br>内存：2GB<br>硬盘：40GB SSD<br>流量：2000GB/月<br>带宽：1千兆<br>价格：月$52.99<br>月付19.99方案（普通）<br>CPU: 4x Intel Xeon<br>内存：4GB<br>硬盘：80GB SSD<br>流量：3000GB/月<br>带宽：1千兆<br>价格：月$19.99<br>月付39.99方案（普通）<br>CPU: 5x Intel Xeon<br>内存：8GB<br>硬盘：160GB SSD<br>流量：4000GB/月<br>带宽：1千兆<br>价格：月$39.99<br>5、洛杉矶CN2 GIA DC6(企业大带宽)</p>
+<p>从2019年2月份中旬开始，我们可以看到搬瓦工VPS主机商家有新增洛杉矶CN2 GIA DC6机房，用他们的标识算是CN2 GIA ECOMMERCE，主要是针对企业级用户使用的。提供最高达到10Gbps带宽。可以切换到多个机房，但是不支持切换到香港机房。</p>
+<p>半年65.99方案（CN2 GIA DC6）<br>CPU: 2x Intel Xeon<br>内存：1GB<br>硬盘：20GB SSD<br>流量：1000GB/月<br>带宽：2.5千兆<br>价格：年$65.99<br>季69.99方案（CN2 GIA DC6）<br>CPU: 3x Intel Xeon<br>内存：2GB<br>硬盘：40GB SSD<br>流量：2000GB/月<br>带宽：2.5千兆<br>价格：月$69.99<br>月75.99方案（CN2 GIA DC6）<br>CPU: 6x Intel Xeon<br>内存：8GB<br>硬盘：160GB SSD<br>流量：5000GB/月<br>带宽：5千兆<br>价格：月$75.99<br>月月139.99方案（CN2 GIA DC6）<br>CPU: 8x Intel Xeon<br>内存：16GB<br>硬盘：320GB SSD<br>流量：8000GB/月<br>带宽：5千兆<br>价格：月$139.99<br>月249.99方案（CN2 GIA DC6）<br>CPU: 10x Intel Xeon<br>内存：32GB<br>硬盘：64GB SSD<br>流量：10000GB/月<br>带宽：10千兆<br>价格：月$249.99<br>月479.99方案（CN2 GIA DC6）<br>CPU: 12x Intel Xeon<br>内存：64GB<br>硬盘：1280GB SSD<br>流量：12000GB/月<br>带宽：10千兆<br>价格：月$479.99<br>当前可用搬瓦工VPS列表：点击这里查看当前所有可购买搬瓦工方案 ，且购买时候使用BWH34QMFYT2R 优惠码再节省6%</p>
+<p>Tip：选择合适自己的VPS方案。搬瓦工VPS任何方案都支持无限次重装系统。<br>搬瓦工VPS选择建议<br>1、根据速度选择</p>
+<p>如果我们追求VPS主机速度，在搬瓦工已有的四种配置中我们可以从速度区分。分别是 香港机房、洛杉矶CN2 GIA、洛杉矶CN2 GT、普通机房。不过价格上需要根据我们实际的预算选择。</p>
+<p>2、根据功能选择</p>
+<p>目前，搬瓦工VPS主机只有Linux系统。我们在选择VPS主机的时候一般用于建站、调制软件程序、自己配置环境测试使用的，包括我们还有很多用于外贸业务的。总之，我们根据自己需要的选择配置和机房，对于建站我建议是需要至少1GB内存的，一般我们安装面板的话最好是需要这个内存起步。如果是普通的软件测试，不在乎内存的话无所谓，目前最低是512MB内存。</p>
+<p>3、根据需求项目周期</p>
+<p>虽然搬瓦工VPS新注册用户支持新订单30天内可以无条件退款，但是老用户或者超过30天是不允许退款的。我们有些项目是短期使用的，我们可以选择月付方式。当然，如果需要多机房的，我们可以选择CN2 GIA，这样可以切换的机房比一般普通机房是多一些的。如果需要多机房，那不建议选香港机房，因为香港机房</p>
+<p>总结，任何商家都有优势和缺点，搬瓦工VPS主机商家也一样的。比如我们可以看到原来低价的搬瓦工Bandwagonhost已经不再低价，但是相反的我们可以看到配置与性能的提高。</p>
+
         </div>
         
         
@@ -220,6 +271,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/docker/yidianyidi-201910240947.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">docker container 端口无法访问</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/C-sharp/yidianyidi-1910121308.html">
@@ -251,10 +309,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-12T05:57:22.000Z">2019-10-12</time></div>
-                    <a href="/数据库/yidianyidi-180824.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">SqlServer使用ip无法登陆</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T08:25:52.000Z">2020-08-20</time></div>
+                    <a href="/docker/yidianyidi-2008201625.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">docker查看容器的网络ip</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
+                        <a class="has-link-grey -link" href="/categories/docker/">docker</a>
                     </p>
                 </div>
             </div>
@@ -264,8 +322,21 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-12T05:08:24.000Z">2019-10-12</time></div>
-                    <a href="/C-sharp/yidianyidi-1910121308.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">rdlc报表打印提示找不到相关文件</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T07:36:49.000Z">2020-08-20</time></div>
+                    <a href="/docker/yidianyidi-2008201536.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">docker安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/docker/">docker</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T07:14:09.000Z">2020-08-20</time></div>
+                    <a href="/C-sharp/yidianyidi-2008201514.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">adobe打印参数设置</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C-sharp/">C#</a>
                     </p>
@@ -277,10 +348,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T09:16:28.000Z">2019-10-11</time></div>
-                    <a href="/Hexo/yidianyidi-1910111716.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo配置 优化SEO</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T06:34:09.000Z">2020-02-13</time></div>
+                    <a href="/BWG-VPS/yidianyidi-2002131434.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Bwg VPS Share</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                        <a class="has-link-grey -link" href="/categories/BWG-VPS/">BWG VPS</a>
                     </p>
                 </div>
             </div>
@@ -290,23 +361,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T05:15:45.000Z">2019-10-11</time></div>
-                    <a href="/Hexo/yidianyidi-19101113.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo设置自定义指定首页</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T01:01:24.000Z">2019-10-29</time></div>
+                    <a href="/linux/yidianyidi-201910290901.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">centos7 添加用户并授权root权限</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-08-12T03:50:24.000Z">2017-08-12</time></div>
-                    <a href="/Hexo/yidianyidi-1708121150.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo + Github 搭建个人博客</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Hexo/">Hexo</a>
+                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
                     </p>
                 </div>
             </div>
@@ -324,12 +382,20 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/BWG-VPS/">
+            <span class="level-start">
+                <span class="level-item">BWG VPS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/C-sharp/">
             <span class="level-start">
                 <span class="level-item">C#</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Git/">
@@ -356,7 +422,23 @@
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/数据库/">
+        <a class="level is-marginless" href="/categories/docker/">
+            <span class="level-start">
+                <span class="level-item">docker</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/">
+            <span class="level-start">
+                <span class="level-item">linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/DataBase/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
             </span>
@@ -394,12 +476,56 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -451,9 +577,23 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/BANGWAGONG/">
+                        <span class="tag">BANGWAGONG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BWG/">
+                        <span class="tag">BWG</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C#</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -500,8 +640,43 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Visual-Studio/">
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/WebService/">
                         <span class="tag">WebService</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/adobe/">
+                        <span class="tag">adobe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/centos/">
+                        <span class="tag">centos</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/docker-安装/">
+                        <span class="tag">docker 安装</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/docker-端口映射/">
+                        <span class="tag">docker 端口映射</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -577,6 +752,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/winfrom/">
+                        <span class="tag">winfrom</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/自律/">
                         <span class="tag">自律</span>
                         <span class="tag is-grey">1</span>
@@ -614,11 +796,11 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="SqlServer使用ip无法登陆" height="28">
+                    <img src="/images/favicon.svg" alt="搬瓦工VPS方案分享" height="28">
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 yidianyidi&nbsp;
+                &copy; 2020 yidianyidi&nbsp;
                 Powered by <a href="#" target="_blank">yidianyidi.fun</a> 
                 
                 <br>
@@ -708,7 +890,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 <a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
+     <i class="fas fa-chevron-up"></i>
+   
 </a>
 <script src="/js/back-to-top.js" defer></script>
 
