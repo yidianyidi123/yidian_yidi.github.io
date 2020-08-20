@@ -10,18 +10,18 @@
 <title>docker查看容器的网络ip - yidianyidi</title>
 
 
-    <meta name="description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址：    docker inspect –format=’{{.Name">
+    <meta name="description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址： docker inspect --format=&amp;apos;{{.N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker查看容器的网络ip">
 <meta property="og:url" content="https://yidianyidi.fun/docker/yidianyidi-2008201625.html">
 <meta property="og:site_name" content="yidianyidi">
-<meta property="og:description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址：    docker inspect –format=’{{.Name">
+<meta property="og:description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址： docker inspect --format=&amp;apos;{{.N">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yidianyidi.fun/images/og_image.png">
-<meta property="og:updated_time" content="2020-08-20T09:33:25.174Z">
+<meta property="og:updated_time" content="2020-08-20T09:37:44.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker查看容器的网络ip">
-<meta name="twitter:description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址：    docker inspect –format=’{{.Name">
+<meta name="twitter:description" content="1.通过容器名或者id查看对应的ip： docker inspect -f &amp;apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&amp;apos; container_name_or_id可直接获得容器的ip地址如：172.18.0.4 2.显示所有容器IP地址： docker inspect --format=&amp;apos;{{.N">
 <meta name="twitter:image" content="https://yidianyidi.fun/images/og_image.png">
 
 
@@ -160,8 +160,8 @@
         <div class="content">
             <p>1.通过容器名或者id查看对应的ip：</p>
 <pre><code>docker inspect -f &apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; container_name_or_id</code></pre><p>可直接获得容器的ip地址如：172.18.0.4</p>
-<p>2.显示所有容器IP地址：<br>    docker inspect –format=’{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}‘ $(docker ps -aq)</p>
-<p>常用方法有两种,</p>
+<p>2.显示所有容器IP地址：</p>
+<pre><code>docker inspect --format=&apos;{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; $(docker ps -aq)</code></pre><p>常用方法有两种,</p>
 <p>方法一</p>
 <pre><code>docker inspect 容器ID | grep IPAddress</code></pre><p>方法二<br>查看docker name：</p>
 <pre><code>sudo docker inspect -f=&apos;{{.Name}}&apos; $(sudo docker ps -a -q)</code></pre><p>查看dockers ip：</p>

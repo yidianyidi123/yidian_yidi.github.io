@@ -152,8 +152,8 @@
         <div class="content">
             <p>1.通过容器名或者id查看对应的ip：</p>
 <pre><code>docker inspect -f &apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; container_name_or_id</code></pre><p>可直接获得容器的ip地址如：172.18.0.4</p>
-<p>2.显示所有容器IP地址：<br>    docker inspect –format=’{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}‘ $(docker ps -aq)</p>
-<p>常用方法有两种,</p>
+<p>2.显示所有容器IP地址：</p>
+<pre><code>docker inspect --format=&apos;{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; $(docker ps -aq)</code></pre><p>常用方法有两种,</p>
 <p>方法一</p>
 <pre><code>docker inspect 容器ID | grep IPAddress</code></pre><p>方法二<br>查看docker name：</p>
 <pre><code>sudo docker inspect -f=&apos;{{.Name}}&apos; $(sudo docker ps -a -q)</code></pre><p>查看dockers ip：</p>
