@@ -10,19 +10,19 @@
 <title>docker container 端口无法访问 - yidianyidi</title>
 
 
-    <meta name="description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。">
+    <meta name="description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。尝试方法：">
 <meta name="keywords" content="docker 端口映射">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker container 端口无法访问">
 <meta property="og:url" content="https://yidianyidi.fun/docker/yidianyidi-201910240947.html">
 <meta property="og:site_name" content="yidianyidi">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。尝试方法：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yidianyidi.fun/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-24T02:11:27.998Z">
+<meta property="og:updated_time" content="2020-08-21T07:24:12.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker container 端口无法访问">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。尝试方法：">
 <meta name="twitter:image" content="https://yidianyidi.fun/images/og_image.png">
 
 
@@ -159,9 +159,11 @@
             
         </h1>
         <div class="content">
-            <p>&emsp;&emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。</p>
+            <p>&emsp;&emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。<br>尝试方法：</p>
 <a id="more"></a>
-<p>尝试方法：<br>   两种防火墙（firewalld.service或iptables）打开或者关闭的时候都试过，问题未完全解决；<br>防火墙开启后，部分容器在局域网能ping通,部分容器局域网却不能ping通；<br>防火墙关闭后，部分容器在局域网能ping通,部分容器局域网却不能ping通，刚好跟上面的情况相反；<br>经过测试，偶然机会下发现创建多个Network Intance </p>
+
+
+<p>   两种防火墙（firewalld.service或iptables）打开或者关闭的时候都试过，问题未完全解决；<br>防火墙开启后，部分容器在局域网能ping通,部分容器局域网却不能ping通；<br>防火墙关闭后，部分容器在局域网能ping通,部分容器局域网却不能ping通，刚好跟上面的情况相反；<br>经过测试，偶然机会下发现创建多个Network Intance </p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker network ls</span><br><span class="line">NETWORK ID          NAME                DRIVER              SCOPE</span><br><span class="line">f48432fd385f        bridge              bridge              local</span><br><span class="line">c3c9a16784be        host                host                local</span><br><span class="line">dd5b7a67a6e3        net888              bridge              local</span><br><span class="line">6ce943ed9ec0        net999              bridge              local</span><br><span class="line">55f0e14cfa51        none                null                local</span><br><span class="line">c005b7ce16e8        staticnet           bridge              local</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;因为需要设置容器的固定ip，’staticnet’自己创建的网络模式，经常使用的是’staticnet’网络模式，多次创建容器然后再创建其他容器，上面多次开启关闭防火墙测试的也是这个网络模式下的容器；可能是这个模式下使用同个ip创建容器或者防火墙配置哪里出问题了，导致局域网其他电脑不能ping通该容器，或者该容器不能连接局域网，经过很久百度都没解决问题，偶然机会下，发现创建新的网络模式下，用新的网络模式创建的容器却没有上面的问题。</p>
@@ -228,8 +230,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/uncategorized/yidianyidi-.html">
-                <span class="level-item">搬瓦工VPS方案分享</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/C-sharp/yidianyidi-1910121308.html">
+                <span class="level-item">rdlc报表打印提示找不到相关文件</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -252,6 +254,32 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T02:01:22.000Z">2020-08-21</time></div>
+                    <a href="/vps/yidianyidi-201908211001.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">搬瓦工VPS方案分享</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps/">vps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T01:10:37.000Z">2020-08-21</time></div>
+                    <a href="/vps-bwg/yidianyidi-2008210910.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2020搬瓦工VPS使用方案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps-bwg/">vps bwg</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -292,32 +320,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T06:34:09.000Z">2020-02-13</time></div>
-                    <a href="/BWG-VPS/yidianyidi-2002131434.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Bwg VPS Share</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/BWG-VPS/">BWG VPS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T01:01:24.000Z">2019-10-29</time></div>
-                    <a href="/linux/yidianyidi-201910290901.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">centos7 添加用户并授权root权限</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -330,14 +332,6 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/BWG-VPS/">
-            <span class="level-start">
-                <span class="level-item">BWG VPS</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/C-sharp/">
             <span class="level-start">
                 <span class="level-item">C#</span>
@@ -386,6 +380,22 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/vps/">
+            <span class="level-start">
+                <span class="level-item">vps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/vps-bwg/">
+            <span class="level-start">
+                <span class="level-item">vps bwg</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/DataBase/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
@@ -429,18 +439,7 @@
                     <span class="level-item">八月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/02/">
-                <span class="level-start">
-                    <span class="level-item">二月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -451,7 +450,7 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -525,20 +524,6 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/BANGWAGONG/">
-                        <span class="tag">BANGWAGONG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/BWG/">
-                        <span class="tag">BWG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C#</span>
                         <span class="tag is-grey">1</span>
@@ -604,6 +589,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/adobe/">
                         <span class="tag">adobe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bandwagong/">
+                        <span class="tag">bandwagong</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bwg-bandwagongHost/">
+                        <span class="tag">bwg bandwagongHost</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

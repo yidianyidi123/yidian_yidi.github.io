@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 154 个字)
+                    1 分钟 读完 (大约 155 个字)
                 </span>
                 
                 
@@ -164,14 +164,17 @@
             <p>1.通过容器名或者id查看对应的ip：</p>
 <pre><code>docker inspect -f &apos;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; container_name_or_id</code></pre><p>可直接获得容器的ip地址如：172.18.0.4</p>
 <p>2.显示所有容器IP地址：</p>
-<pre><code>docker inspect --format=&apos;{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; $(docker ps -aq)</code></pre><p>常用方法有两种,</p>
-<p>方法一</p>
-<pre><code>docker inspect 容器ID | grep IPAddress</code></pre><p>方法二<br>查看docker name：</p>
-<pre><code>sudo docker inspect -f=&apos;{{.Name}}&apos; $(sudo docker ps -a -q)</code></pre><p>查看dockers ip：</p>
-<pre><code>sudo docker inspect -f=&apos;{{.NetworkSettings.IPAddress}}&apos; $(sudo docker ps -a -q)</code></pre><p>综上，我们可以写出以下脚本列出所有容器对应的名称，端口，及ip</p>
-<pre><code>docker inspect -f=&apos;{{.Name}} {{.NetworkSettings.IPAddress}} {{.HostConfig.PortBindings}}&apos; $(docker ps -aq)</code></pre>
+<pre><code>docker inspect --format=&apos;{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&apos; $(docker ps -aq)</code></pre>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/docker/yidianyidi-2008201625.html#more">阅读更多&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -201,7 +204,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 323 个字)
+                    2 分钟 读完 (大约 324 个字)
                 </span>
                 
                 
@@ -217,45 +220,20 @@
             <p>一、安装docker。<br>官方教程：<a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/centos/</a></p>
 <p>$ uname -r</p>
 <ol>
-<li><p>卸载旧版本<br>Docker 的旧版本名称为：docker 、 docker-engine 或者 docekr-io。<br>如果安装过旧版本的需要先卸载：</p>
-<pre><code>$ sudo yum remove docker \
-                 docker-client \
-                 docker-client-latest \
-                 docker-common \
-                 docker-latest \
-                 docker-latest-logrotate \
-                 docker-logrotate \
-                 docker-selinux \
-                 docker-engine-selinux \
-                 docker-engine \
-                 docker.io</code></pre></li>
-<li><p>安装最新版本的 Docker<br>最新版本的 Docker 分两个版本，docker-ce(Community Edition)和docker-ee(Enterprise Edition)。CE版本是免费的，如果我们学习或者一般应用，CE足够。我们安装社区版。<br> 2.1. 安装依赖的软件包</p>
-<pre><code>$ sudo yum install -y yum-utils \
-device-mapper-persistent-data \
-lvm2</code></pre><p> 2.2 设置稳定版仓库</p>
-<pre><code>#添加官方数据源
-$ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
+<li>卸载旧版本<br>Docker 的旧版本名称为：docker 、 docker-engine 或者 docekr-io。<br>如果安装过旧版本的需要先卸载：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum remove docker \</span><br><span class="line">                    docker-client \</span><br><span class="line">                    docker-client-latest \</span><br><span class="line">                    docker-common \</span><br><span class="line">                    docker-latest \</span><br><span class="line">                    docker-latest-logrotate \</span><br><span class="line">                    docker-logrotate \</span><br><span class="line">                    docker-selinux \</span><br><span class="line">                    docker-engine-selinux \</span><br><span class="line">                    docker-engine \</span><br><span class="line">                    docker.io</span><br></pre></td></tr></table></figure>
 
-# 添加阿里云数据源
-$ sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></pre><p> 2.3 安装</p>
-<pre><code>$ sudo yum list docker-ce --showduplicates | sort -r # 列出可以安装的docker版本
-$ sudo yum install docker-ce # 下载最新版本
-$ sudo yum install -y docker-ce-18.03.1.ce-1.el7.centos # 安装指定版本</code></pre><p> 2.4 启动Docker</p>
-<pre><code>$ sudo systemctl start docker # 启动
-或者 $ sudo service start docker # 启动
-$ sudo systemctl stop docker
-$ sudo systemctl restart docker
-
-$ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 检查docker是否安装成功</p>
-<pre><code>$ docker --version # 查看安装的docker版本</code></pre></li>
+</li>
 </ol>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/docker/yidianyidi-2008201536.html#more">阅读更多&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -298,7 +276,7 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
             
         </h1>
         <div class="content">
-            <p>&emsp;&emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。</p>
+            <p>&emsp;&emsp;docker容器端口已经映射到宿主机端口情况下，局域网机器却不能ping通，或者局域网能ping通，容器ping到宿主机却不通。<br>尝试方法：</p>
         </div>
         
         
@@ -340,6 +318,32 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T02:01:22.000Z">2020-08-21</time></div>
+                    <a href="/vps/yidianyidi-201908211001.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">搬瓦工VPS方案分享</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps/">vps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T01:10:37.000Z">2020-08-21</time></div>
+                    <a href="/vps-bwg/yidianyidi-2008210910.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2020搬瓦工VPS使用方案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps-bwg/">vps bwg</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T08:25:52.000Z">2020-08-20</time></div>
                     <a href="/docker/yidianyidi-2008201625.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">docker查看容器的网络ip</a>
                     <p class="is-size-7 is-uppercase">
@@ -375,32 +379,6 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T06:34:09.000Z">2020-02-13</time></div>
-                    <a href="/BWG-VPS/yidianyidi-2002131434.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Bwg VPS Share</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/BWG-VPS/">BWG VPS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T01:01:24.000Z">2019-10-29</time></div>
-                    <a href="/linux/yidianyidi-201910290901.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">centos7 添加用户并授权root权限</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -413,14 +391,6 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/BWG-VPS/">
-            <span class="level-start">
-                <span class="level-item">BWG VPS</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/C-sharp/">
             <span class="level-start">
                 <span class="level-item">C#</span>
@@ -469,6 +439,22 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/vps/">
+            <span class="level-start">
+                <span class="level-item">vps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/vps-bwg/">
+            <span class="level-start">
+                <span class="level-item">vps bwg</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/DataBase/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
@@ -512,18 +498,7 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
                     <span class="level-item">八月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/02/">
-                <span class="level-start">
-                    <span class="level-item">二月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -534,7 +509,7 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -608,20 +583,6 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/BANGWAGONG/">
-                        <span class="tag">BANGWAGONG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/BWG/">
-                        <span class="tag">BWG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C#</span>
                         <span class="tag is-grey">1</span>
@@ -687,6 +648,20 @@ $ sudo docker run hello-world # 检查docker运行正常  </code></pre><p> 2.5 �
                 <div class="control">
                     <a class="tags has-addons" href="/tags/adobe/">
                         <span class="tag">adobe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bandwagong/">
+                        <span class="tag">bandwagong</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bwg-bandwagongHost/">
+                        <span class="tag">bwg bandwagongHost</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

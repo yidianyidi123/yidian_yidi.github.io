@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 728 个字)
+                    5 分钟 读完 (大约 729 个字)
                 </span>
                 
                 
@@ -163,28 +163,16 @@
         <div class="content">
             <p>Adobe阅读器 我如何在Acrobat和Adobe阅读器中使用 Windows 命令行？ ( 适用于 Adobe acrobat/reader 10，而非 XI ) 用于显示对话框的命令是：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start&quot;Print PDF&quot;/wait&quot;%ProgramFiles(x86)%AdobeReader 11.0ReaderAcroRd32.exe&quot;/p&quot;%%p&quot;</span><br></pre></td></tr></table></figure>
-
-<p>我认为，如果应该显示打印对话框，使用选项 /h 来有启动Adobe读取器是不用的。</p>
-<p>要打印到特定打印机，要使用的命令行 就像</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start&quot;Print PDF&quot;/wait/min&quot;%ProgramFiles(x86)%AdobeReader 11.0ReaderAcroRd32.exe&quot;/t&quot;%%p&quot;&quot;printername&quot;&quot;drivername&quot;&quot;portname&quot;</span><br></pre></td></tr></table></figure>
-
-<p>/wait 暂停批处理作业的执行，直到Adobe读取器自行终止。 如果应用程序不重写并显示最大化的窗口，则选项 /min 会使用最小化窗口执行GUI应用程序。</p>
-<p>SumatraPDF<br>i的SumatraPDF手册是 up-to-date，因为它在Sumatra的文档中链接了参数页面 page 。 Wiki页面最近更新，包含关于打印选项的不同信息。</p>
-<p>-print-to-default<br>将这里 命令行 上指示的所有文件打印到系统默认打印机。 打印后，SumatraPDF立即退出( 检查错误代码是否失败) 。<br>因这里，可以使用 命令行 打印多个文件，使用SumatraPDF调用，使批处理文件更有效。</p>
-<p>由于没有安装 SumatraPDF，我建议先尝试使用 3行的批处理文件</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;%ProgramFiles(x86)%SumatraPDFSumatraPDF.exe&quot; -print-to-default&quot;Full Path and Name of a PDF file&quot;</span><br><span class="line">echo Exit code of SumatraPDF is: %ERRORLEVEL%</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-
-<p>下一批批处理文件输出。 是否显示错误，或者是否按预期打印PDF文件？<br>打印完成前，控制台窗口中的第二行？<br>如果这样，SumatraPDF将作为单独的进程启动，并且退出代码评估并不真正可能。 否则，你已经有了使用。<br>但是如果SumatraPDF作为单独的( GUI ) 进程启动，那么很有可能需要使用命令 start 和选项 /wait，如上面所示，也可能是。</p>
-<p>注意：小批处理文件顶部没有 @echo off 可以测试以查看执行批处理文件的命令。</p>
-<p>循环<br>查看 FOR 循环代码时，将空格字符指定为分隔符是错误的，这对于文件路径/名称不好。 另外，空间字符是默认的命令 FOR 分隔符，因这里不必将它显式定义为分隔符。</p>
-<p>因此我建议使用</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@for/F&quot;delims=&quot; %%p in (&apos;dir&quot;Y:*.pdf&quot;/b/a-d/s&apos; 2^&gt;nul) do (</span><br><span class="line">&quot;%ProgramFiles(x86)%SumatraPDFSumatraPDF.exe&quot; -print-to-default&quot;%%p&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>使用 “delims=”，分隔符列表只更改为换行符。 因这里 %%p 始终是一个文件的整个路径和 NAME，即使在命令 dir 中存在 1个或者多个空格。</p>
-<p>如果没有将错误消息重定向到设备 NUL，2^&gt;nul 将禁止在整个驱动器 Y: 上找到命令 dir的错误消息。</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/C-sharp/yidianyidi-2008201514.html#more">阅读更多&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -536,6 +524,32 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T02:01:22.000Z">2020-08-21</time></div>
+                    <a href="/vps/yidianyidi-201908211001.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">搬瓦工VPS方案分享</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps/">vps</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-21T01:10:37.000Z">2020-08-21</time></div>
+                    <a href="/vps-bwg/yidianyidi-2008210910.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">2020搬瓦工VPS使用方案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/vps-bwg/">vps bwg</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-20T08:25:52.000Z">2020-08-20</time></div>
                     <a href="/docker/yidianyidi-2008201625.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">docker查看容器的网络ip</a>
                     <p class="is-size-7 is-uppercase">
@@ -571,32 +585,6 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T06:34:09.000Z">2020-02-13</time></div>
-                    <a href="/BWG-VPS/yidianyidi-2002131434.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Bwg VPS Share</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/BWG-VPS/">BWG VPS</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T01:01:24.000Z">2019-10-29</time></div>
-                    <a href="/linux/yidianyidi-201910290901.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">centos7 添加用户并授权root权限</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -609,14 +597,6 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/BWG-VPS/">
-            <span class="level-start">
-                <span class="level-item">BWG VPS</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/C-sharp/">
             <span class="level-start">
                 <span class="level-item">C#</span>
@@ -665,6 +645,22 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/vps/">
+            <span class="level-start">
+                <span class="level-item">vps</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/vps-bwg/">
+            <span class="level-start">
+                <span class="level-item">vps bwg</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/DataBase/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
@@ -708,18 +704,7 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
                     <span class="level-item">八月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/02/">
-                <span class="level-start">
-                    <span class="level-item">二月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -730,7 +715,7 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -804,20 +789,6 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/BANGWAGONG/">
-                        <span class="tag">BANGWAGONG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/BWG/">
-                        <span class="tag">BWG</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C#</span>
                         <span class="tag is-grey">1</span>
@@ -883,6 +854,20 @@ Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0
                 <div class="control">
                     <a class="tags has-addons" href="/tags/adobe/">
                         <span class="tag">adobe</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bandwagong/">
+                        <span class="tag">bandwagong</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bwg-bandwagongHost/">
+                        <span class="tag">bwg bandwagongHost</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
